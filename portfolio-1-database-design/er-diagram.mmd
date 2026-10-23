@@ -1,0 +1,68 @@
+erDiagram
+    CUSTOMER ||--o{ ORDERS : places
+    CUSTOMER ||--o{ SERVICEREQUEST : submits
+    CATEGORY ||--o{ PRODUCT : classifies
+    ORDERS ||--o{ ORDERITEM : contains
+    PRODUCT ||--o{ ORDERITEM : appears_in
+    ORDERS ||--o{ PAYMENT : receives
+    ORDERS ||--o{ DELIVERY : has
+
+    CUSTOMER {
+        int CustomerID PK
+        string FullName
+        string Email UK
+        string Phone
+        string Address
+    }
+
+    CATEGORY {
+        int CategoryID PK
+        string CategoryName
+    }
+
+    PRODUCT {
+        int ProductID PK
+        string ProductName
+        decimal Price
+        int Quantity
+        int CategoryID FK
+    }
+
+    ORDERS {
+        int OrderID PK
+        int CustomerID FK
+        date OrderDate
+        string OrderStatus
+    }
+
+    ORDERITEM {
+        int OrderItemID PK
+        int OrderID FK
+        int ProductID FK
+        int Quantity
+        decimal UnitPrice
+    }
+
+    PAYMENT {
+        int PaymentID PK
+        int OrderID FK
+        decimal Amount
+        date PaymentDate
+        string PaymentMethod
+    }
+
+    DELIVERY {
+        int DeliveryID PK
+        int OrderID FK
+        string DeliveryStatus
+        date DeliveryDate
+    }
+
+    SERVICEREQUEST {
+        int ServiceRequestID PK
+        int CustomerID FK
+        string ServiceType
+        string Description
+        date RequestDate
+        string RequestStatus
+    }

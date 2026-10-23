@@ -1,0 +1,25 @@
+[
+  {
+    "_id": "C101",
+    "name": "Sample Customer",
+    "email": "customer@example.com",
+    "phone": "08000000000",
+    "service_requests": [
+      {
+        "request_id": "SR1001",
+        "service_type": "Network Configuration",
+        "description": "Office network setup",
+        "status": "In Progress",
+        "request_date": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "_id": "P001",
+    "product_name": "Laptop",
+    "category": "Computer Hardware",
+    "price": 350000,
+    "stock": 15,
+    "currency": "NGN"
+  }
+]

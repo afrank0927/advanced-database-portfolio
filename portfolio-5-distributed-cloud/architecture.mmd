@@ -1,0 +1,9 @@
+flowchart LR
+    CustomersAndStaff[Customers and Staff] --> WebApp[Web Application]
+    WebApp --> AppBackend[Application Backend]
+    AppBackend --> RDS[AWS RDS for MySQL\nPrimary Database]
+    RDS --> ReadReplica[Read Replica\nReporting and Analytics]
+    RDS --> AutomatedBackups[Automated Backups]
+
+    classDef node fill:#00284d,stroke:#1a3e5f,color:#99ceff;
+    class CustomersAndStaff,WebApp,AppBackend,RDS,ReadReplica,AutomatedBackups node;
